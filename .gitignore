@@ -1,0 +1,7 @@
+*.Rhistory
+.Rhistory
+output/
+data_orgn/
+input/
+input_data/
+.parquet/
