@@ -8,7 +8,7 @@ pacman::p_load(dplyr, tidyr, logger, assertr, arrow, writexl)
 
 log_info("DEFINE DIRECTORY")
 
-setwd("/mnt/c/Users/sebas/OneDrive/Documents/curso_r_cs/")
+setwd("/Users/sebas/OneDrive/Documents/curso_r_cs/")
 
 input_1 <- "input_data/agropecuario/censo_agro_import.parquet"
 
@@ -37,10 +37,11 @@ total_has <- censo_agr_2014 %>%
   verify(nrow(.) > 0) %>%
   summarise(total = sum(p_s12p150a_has_clean, na.rm = TRUE))
 
+rm(censo_agr_2014)
+
 log_info("EXPORT")
 write_xlsx(total_has, output_1)
 
-rm(censo_agr_2014)
 gc()
 
 log_info("DONE CLEAN.")
