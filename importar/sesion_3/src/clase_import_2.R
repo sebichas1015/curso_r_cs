@@ -13,8 +13,6 @@ input_coca <- "input_data/economias_ilicitas/RPT_CultivosIlicitos_2024-12-22--19
 
 input_gini_t <- "input_data/agropecuario/GINI_COL_IGAC_V3_07052024.xlsx"
 
-input_ins_viol <- "input_data/violencia/Replication Dataset-Panel Data.dta"
-
 input_cnmh_df <- "input_data/violencia/CasosDF_202409.parquet"
 
 input_censo <- "input_data/agropecuario/censo_agro_import.parquet"
@@ -27,7 +25,7 @@ table_coca <- read.xlsx(input_coca, startRow = 9)
 table_gini <- read.xlsx(input_gini_t, sheet = "Gini Municipal", startRow = 4)
 
 log_info("DELETE OBJECTS")
-rm(table_pnis, table_hogares, table_ins_viol, table_cnmhdf, table_censo)
+rm(table_censo, table_coca, table_gini)
 
 gc()
 
