@@ -18,7 +18,8 @@ input_cnmh_df <- "input_data/violencia/CasosDF_202409.parquet"
 input_censo <- "input_data/agropecuario/censo_agro_import.parquet"
 
 log_info("LOAD DATA")
-table_censo <- read_parquet(input_censo, col_select = c("recordid", "p_s12p150a", "s05_tenencia"))
+table_censo <- read_parquet(input_censo, col_select = c("recordid", "p_s12p150a",
+                                                        "s05_tenencia"))
 
 table_coca <- read.xlsx(input_coca, startRow = 9)
 
